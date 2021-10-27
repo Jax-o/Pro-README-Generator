@@ -38,7 +38,7 @@ const questions = [{
 	type: 'list',
 	name: 'license',
 	message: 'Which license applies to your application?',
-	choices: ['GNU', 'Apache', 'MIT', 'ISC'],
+	choices: ['Mozilla', 'Apache', 'MIT', 'GNU'],
 },
 {
 	type: 'input',
@@ -54,10 +54,10 @@ const questions = [{
 
 // function to initialize app
 function init() {
-	inquirer.prompt(questions).then((answers) => {
-		const readMeContent = markDown(answers)
+	inquirer.prompt(questions).then((answers, license) => {
+		const readMeContent = markDown(answers, license)
 		fs.writeFile('README.md', readMeContent, (err) =>
-			err ? console.log(err) : console.log(answers))
+			err ? console.log(err) : console.log(answers, license))
 	})
 };
 

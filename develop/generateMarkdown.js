@@ -1,17 +1,44 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+// function that returns a license badge based on which license is passed in
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+const mozillaBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]";
+const apacheBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]";
+const mitBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
+const gnuBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)]";
+
+function renderLicenseBadge(license) {
+	if (license === 'Mozilla') {
+		return mozillaBadge;
+	} else if (license === 'Apache') {
+		return apacheBadge;
+	} else if (license === 'MIT') {
+		return mitBadge;
+	} else {
+		return gnuBadge;
+	}
+	
+}
+
+// function that returns the license link
+
+const mozillaLink = "(https://opensource.org/licenses/MPL-2.0)";
+const apacheLink = "(https://opensource.org/licenses/Apache-2.0)";
+const mitLink = "(https://opensource.org/licenses/MIT)";
+const gnuLink = "(http://www.gnu.org/licenses/gpl-3.0)";
+
 function renderLicenseLink(license) {}
+if (license === 'Mozilla') {
+	return mozillaLink;
+} else if (license === 'Apache') {
+	return apacheLink;
+} else if (license === 'MIT') {
+	return mitLink;
+} else {
+	return gnuLink;
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
 // function to generate markdown for README
-function generateMarkdown(answers) {
+function generateMarkdown(answers, license) {
   return `# ${answers.title}
   ## Table of Contents
   1. [Description](#description)
@@ -47,5 +74,7 @@ function generateMarkdown(answers) {
 
 `;
 }
+renderLicenseBadge();
+renderLicenseLink();
 
-module.exports = generateMarkdown;
+module.exports = generateMarkdown; renderLicenseBadge; renderLicenseLink;
