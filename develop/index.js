@@ -31,14 +31,14 @@ const questions = [{
  },
  {
 	type: 'input',
-	name: 'test',
+	name: 'tests',
 	message: 'What are the test instructions?',
 },	
 {
 	type: 'list',
 	name: 'license',
 	message: 'Which license applies to your application?',
-	choices: ['Mozilla', 'Apache', 'MIT', 'GNU'],
+	choices: ['ISC', 'Apache', 'MIT', 'GNU'],
 },
 {
 	type: 'input',
@@ -54,10 +54,10 @@ const questions = [{
 
 // function to initialize app
 function init() {
-	inquirer.prompt(questions).then((answers, license) => {
-		const readMeContent = markDown(answers, license)
+	inquirer.prompt(questions).then((answers) => {
+		const readMeContent = markDown(answers)
 		fs.writeFile('README.md', readMeContent, (err) =>
-			err ? console.log(err) : console.log(answers, license))
+			err ? console.log(err) : console.log(answers))
 	})
 };
 

@@ -1,13 +1,13 @@
 // function that returns a license badge based on which license is passed in
 
-const mozillaBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]";
-const apacheBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]";
-const mitBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
-const gnuBadge = "[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)]";
+const iscBadge = "![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)";
+const apacheBadge = "![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)";
+const mitBadge = "![License](https://img.shields.io/badge/License-MIT-yellow.svg)";
+const gnuBadge = "![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)";
 
 function renderLicenseBadge(license) {
-	if (license === 'Mozilla') {
-		return mozillaBadge;
+	if (license === 'ISC') {
+		return iscBadge;
 	} else if (license === 'Apache') {
 		return apacheBadge;
 	} else if (license === 'MIT') {
@@ -20,14 +20,14 @@ function renderLicenseBadge(license) {
 
 // function that returns the license link
 
-const mozillaLink = "(https://opensource.org/licenses/MPL-2.0)";
-const apacheLink = "(https://opensource.org/licenses/Apache-2.0)";
-const mitLink = "(https://opensource.org/licenses/MIT)";
-const gnuLink = "(http://www.gnu.org/licenses/gpl-3.0)";
+const iscLink = "https://opensource.org/licenses/ISC";
+const apacheLink = "https://opensource.org/licenses/Apache-2.0";
+const mitLink = "https://opensource.org/licenses/MIT";
+const gnuLink = "http://www.gnu.org/licenses/gpl-3.0";
 
-function renderLicenseLink(license) {}
-if (license === 'Mozilla') {
-	return mozillaLink;
+function renderLicenseLink(license) {
+if (license === 'ISC') {
+	return iscLink;
 } else if (license === 'Apache') {
 	return apacheLink;
 } else if (license === 'MIT') {
@@ -35,10 +35,11 @@ if (license === 'Mozilla') {
 } else {
 	return gnuLink;
 }
+}
 
 
 // function to generate markdown for README
-function generateMarkdown(answers, license) {
+function generateMarkdown(answers) {
   return `# ${answers.title}
   ## Table of Contents
   1. [Description](#description)
@@ -65,16 +66,19 @@ function generateMarkdown(answers, license) {
   ${answers.tests}
 
   ## License
-  ${answers.license}
+  ${renderLicenseBadge(answers.license)}
+  ${renderLicenseLink(answers.license)}
+
 
   ## Questions
-  Please enter contact information for any questions:
-  ${answers.github}
+  Please enter your GitHub username and email address for any questions:
+  ${answers.username}
   ${answers.email}
 
 `;
+
 }
-renderLicenseBadge();
-renderLicenseLink();
+
+
 
 module.exports = generateMarkdown; renderLicenseBadge; renderLicenseLink;

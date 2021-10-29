@@ -1,4 +1,4 @@
-# blah
+# README generator
   ## Table of Contents
   1. [Description](#description)
   2. [Installation](#installation)
@@ -9,25 +9,27 @@
   7. [Questions](#questions)
 
   ## Description
-  blah blah
+  a readme generator so developers can create their projects faster focusing on coding
 
   ## Installation
-  lkjsdlkfjsdf
+  install npm and run node index
 
   ## Usage
-  laksjflajsdkfjlasdf
+  once the user installs npm and runs node index questions will appear for the readme
 
   ## Contributions
-  lajksdlfkjaslkdjf
+  a user is able to enter any contribution guidelines
 
   ## Tests
-  undefined
+  no test instructions on this project but a user is able to enter them here
 
   ## License
-  Mozilla
+  ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+  https://opensource.org/licenses/MIT
+
 
   ## Questions
-  Please enter contact information for any questions:
-  undefined
-  sdf@gmail.com
+  Please enter your GitHub username and email address for any questions:
+  jax-o
+  jjmlmhc.09@gmail.com
 
